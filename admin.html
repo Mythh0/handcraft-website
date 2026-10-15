@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orders</title>
+<style>body{font:15px/1.5 system-ui;margin:2rem;color:#2B1733}table{border-collapse:collapse;width:100%}
+td,th{padding:.6rem;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}
+select,button{font:inherit;padding:.25rem}.wrap{overflow-x:auto}</style>
+<h1>Orders</h1>
+<div class="wrap"><table>
+<tr><th>#</th><th>Customer</th><th>Items</th><th>Gift note</th><th>Total</th><th>Payment</th><th>Status</th></tr>
+{% for o in orders %}<tr>
+<td>{{o.id}}<br><small>{{o.created}}</small></td>
+<td>{{o.name}}<br>{{o.phone}}<br><small>{{o.address}}</small></td>
+<td>{% for i in items[o.id] %}{{i}}<br>{% endfor %}{% if o.gift_wrap %}<em>+ gift wrap</em>{% endif %}</td>
+<td>{{o.note}}</td><td>₹{{o.total}}</td>
+<td><form method="post"><input type="hidden" name="id" value="{{o.id}}">
+<select name="payment_status" onchange="this.form.submit()">
+{% for s in ['Pending','Paid','COD','Refund due','Refunded'] %}<option {{'selected' if s==o.payment_status}}>{{s}}</option>{% endfor %}
+</select></form>{% if o.razorpay_payment_id %}<small>{{o.razorpay_payment_id}}</small>{% endif %}</td>
+<td><form method="post"><input type="hidden" name="id" value="{{o.id}}">
+<select name="status" onchange="this.form.submit()">
+{% for s in ['Pending payment','New','Packed','Shipped','Delivered','Cancelled'] %}<option {{'selected' if s==o.status}}>{{s}}</option>{% endfor %}
+</select></form></td></tr>
+{% else %}<tr><td colspan="7">No orders yet.</td></tr>{% endfor %}
+</table></div>
