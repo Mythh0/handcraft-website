@@ -1,69 +1,125 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Thistle &amp; Thread — handcrafted gifts</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-:root{--ink:#2B1733;--mist:#F4F1F6;--paper:#FFFFFF;--gold:#B8955A;--rose:#E8C7CF;--sage:#6F8F7C;--line:#DDD5E2;
---serif:"Cormorant Garamond",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+:root {
+  --ink:#2B1733;
+  --mist:#F4F1F6;
+  --paper:#FFFFFF;
+  --gold:#B8955A;
+  --rose:#E8C7CF;
+  --sage:#6F8F7C;
+  --line:#DDD5E2;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Hanken Grotesk",system-ui,sans-serif
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--mist);color:var(--ink);font:16px/1.6 var(--sans)}
-a{color:inherit}button{font:inherit;cursor:pointer}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-header{display:flex;justify-content:space-between;align-items:center;padding:1.2rem clamp(1rem,5vw,4rem);position:sticky;top:0;background:rgba(244,241,246,.92);backdrop-filter:blur(8px);z-index:5;border-bottom:1px solid var(--line)}
+
+header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.2rem clamp(1rem,5vw,4rem);position:sticky;top:0;
+  background:rgba(244,241,246,.92);backdrop-filter:blur(8px);
+  z-index:5;border-bottom:1px solid var(--line)
+}
 .logo{font:600 1.7rem var(--serif);text-decoration:none;letter-spacing:.01em}
-nav{display:flex;gap:1.6rem;align-items:center}nav a{text-decoration:none;font-size:.95rem}
+nav{display:flex;gap:1.6rem;align-items:center}
+nav a{text-decoration:none;font-size:.95rem}
 .bag{background:var(--ink);color:#fff;border:0;border-radius:99px;padding:.5rem 1.1rem}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center;padding:5rem clamp(1rem,5vw,4rem) 4rem;max-width:1200px;margin:auto}
+
+.hero{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center;
+  padding:5rem clamp(1rem,5vw,4rem) 4rem;max-width:1200px;margin:auto
+}
 h1{font:500 clamp(2.8rem,6.5vw,5.4rem)/1.02 var(--serif);margin:0 0 1.2rem;letter-spacing:-.01em}
 .hero p{max-width:34rem;font-size:1.1rem;color:#5a4a63}
 .btn{display:inline-block;background:var(--ink);color:#fff;border:0;border-radius:3px;padding:.85rem 1.6rem;text-decoration:none;font-weight:500}
 .btn.alt{background:none;color:var(--ink);border:1px solid var(--ink);margin-left:.6rem}
 .btn:hover{background:var(--gold)}
-.note{position:relative;background:var(--paper);padding:2.4rem 2rem 2rem;border-radius:4px;box-shadow:0 30px 60px -30px rgba(43,23,51,.35);transform:rotate(2.5deg);animation:sway 1.4s ease-out both}
+
+.note{
+  position:relative;background:var(--paper);padding:2.4rem 2rem 2rem;
+  border-radius:4px;box-shadow:0 30px 60px -30px rgba(43,23,51,.35);
+  transform:rotate(2.5deg);animation:sway 1.4s ease-out both
+}
 .note::before{content:"";position:absolute;top:-34px;left:50%;width:2px;height:40px;background:var(--gold)}
 .note::after{content:"";position:absolute;top:10px;left:calc(50% - 7px);width:14px;height:14px;border-radius:50%;background:var(--mist);border:2px solid var(--gold)}
 .note q{display:block;font:italic 500 1.6rem/1.35 var(--serif);quotes:none}
 .note small{display:block;margin-top:1rem;color:#7a6a83}
-@keyframes sway{0%{transform:rotate(-6deg) translateY(-30px);opacity:0}60%{transform:rotate(4deg)}100%{transform:rotate(2.5deg);opacity:1}}
+@keyframes sway{
+  0%{transform:rotate(-6deg) translateY(-30px);opacity:0}
+  60%{transform:rotate(4deg)}
+  100%{transform:rotate(2.5deg);opacity:1}
+}
+
 section{max-width:1200px;margin:auto;padding:3rem clamp(1rem,5vw,4rem)}
 h2{font:500 clamp(2rem,4vw,3rem) var(--serif);margin:0 0 1.2rem}
 .chips{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
 .chip{border:1px solid var(--line);background:var(--paper);border-radius:99px;padding:.4rem 1rem}
 .chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.6rem}
-.tag{background:var(--paper);position:relative;padding:0 0 1.2rem;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);display:flex;flex-direction:column;transition:transform .2s}
+.tag{
+  background:var(--paper);position:relative;padding:0 0 1.2rem;
+  clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);
+  display:flex;flex-direction:column;transition:transform .2s
+}
 .tag:hover{transform:translateY(-4px)}
 .pic{display:block;width:100%;aspect-ratio:1;object-fit:cover;cursor:pointer;background:var(--rose)}
-.tag h3{cursor:pointer}
-.modal{position:fixed;inset:0;display:none;place-items:center;z-index:10;padding:1rem}.modal.on{display:grid}
-.modal .box{background:var(--paper);max-width:860px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;border-radius:4px}
-.modal img{width:100%;height:100%;object-fit:cover;min-height:280px}
-.modal .txt{padding:2rem}.modal h3{font:500 2.2rem/1.1 var(--serif);margin:0 0 .4rem}
-.modal dl{margin:1.2rem 0;font-size:.92rem}.modal dt{font-weight:600;float:left;clear:left;margin-right:.4rem}.modal dd{margin:0 0 .35rem}
-.x{float:right;border:0;background:none;font-size:1.6rem;line-height:1}
-nav .ghost{background:none;border:0;color:var(--ink);font-size:.95rem}
-.ph{position:relative}.heart{position:absolute;top:12px;left:12px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#b9a9c0;font-size:1.2rem;line-height:1}
-.heart.on{color:#c2385a}.heart:hover{transform:scale(1.08)}
-.toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:.8rem 1.2rem;border-radius:4px;z-index:20;transition:transform .3s;display:flex;gap:1rem;align-items:center}
-.toast.on{transform:translate(-50%,0)}.toast button{background:none;border:0;color:var(--gold);font-weight:600;padding:0}
-.cx{background:#f7e3e7;color:#a3283f;padding:.7rem 1rem;border-radius:3px;margin:1rem 0}
-.steps{list-style:none;padding:0;margin:1.5rem 0}.steps li{position:relative;padding:0 0 1.3rem 2rem;color:#9a8aa3}
-.steps li::before{content:"";position:absolute;left:0;top:.35rem;width:14px;height:14px;border-radius:50%;border:2px solid var(--line);background:var(--paper)}
-.steps li::after{content:"";position:absolute;left:6px;top:1.2rem;bottom:-.2rem;width:2px;background:var(--line)}.steps li:last-child::after{display:none}
-.steps li.done{color:var(--ink)}.steps li.done::before{background:var(--gold);border-color:var(--gold)}.steps li.now{font-weight:600}
-@media(max-width:700px){.modal .box{grid-template-columns:1fr}}
-.tag h3{font:600 1.35rem var(--serif);margin:1rem 1.1rem .2rem}
+.tag h3{cursor:pointer;font:600 1.35rem var(--serif);margin:1rem 1.1rem .2rem}
 .tag p{margin:0 1.1rem;color:#6b5b74;font-size:.92rem;flex:1}
 .row{display:flex;justify-content:space-between;align-items:center;margin:1rem 1.1rem 0}
-.price{font-weight:600}.add{border:1px solid var(--ink);background:none;border-radius:3px;padding:.35rem .9rem}
+.price{font-weight:600}
+.add{border:1px solid var(--ink);background:none;border-radius:3px;padding:.35rem .9rem}
 .add:hover{background:var(--ink);color:#fff}
+
+.modal{position:fixed;inset:0;display:none;place-items:center;z-index:10;padding:1rem}
+.modal.on{display:grid}
+.modal .box{background:var(--paper);max-width:860px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;border-radius:4px}
+.modal img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.modal .txt{padding:2rem}
+.modal h3{font:500 2.2rem/1.1 var(--serif);margin:0 0 .4rem}
+.modal dl{margin:1.2rem 0;font-size:.92rem}
+.modal dt{font-weight:600;float:left;clear:left;margin-right:.4rem}
+.modal dd{margin:0 0 .35rem}
+.x{float:right;border:0;background:none;font-size:1.6rem;line-height:1}
+
+nav .ghost{background:none;border:0;color:var(--ink);font-size:.95rem}
+.ph{position:relative}
+.heart{position:absolute;top:12px;left:12px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#b9a9c0;font-size:1.2rem;line-height:1}
+.heart.on{color:#c2385a}
+.heart:hover{transform:scale(1.08)}
+
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:.8rem 1.2rem;border-radius:4px;z-index:20;transition:transform .3s;display:flex;gap:1rem;align-items:center}
+.toast.on{transform:translate(-50%,0)}
+.toast button{background:none;border:0;color:var(--gold);font-weight:600;padding:0}
+.cx{background:#f7e3e7;color:#a3283f;padding:.7rem 1rem;border-radius:3px;margin:1rem 0}
+
+.steps{list-style:none;padding:0;margin:1.5rem 0}
+.steps li{position:relative;padding:0 0 1.3rem 2rem;color:#9a8aa3}
+.steps li::before{content:"";position:absolute;left:0;top:.35rem;width:14px;height:14px;border-radius:50%;border:2px solid var(--line);background:var(--paper)}
+.steps li::after{content:"";position:absolute;left:6px;top:1.2rem;bottom:-.2rem;width:2px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps li.done{color:var(--ink)}
+.steps li.done::before{background:var(--gold);border-color:var(--gold)}
+.steps li.now{font-weight:600}
+
 .story{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-.story div{border-top:2px solid var(--gold);padding-top:1rem}.story h3{font:600 1.4rem var(--serif);margin:0 0 .3rem}
+.story div{border-top:2px solid var(--gold);padding-top:1rem}
+.story h3{font:600 1.4rem var(--serif);margin:0 0 .3rem}
 footer{padding:3rem clamp(1rem,5vw,4rem);border-top:1px solid var(--line);text-align:center;color:#6b5b74}
+
 .scrim{position:fixed;inset:0;background:rgba(43,23,51,.4);opacity:0;pointer-events:none;transition:.25s;z-index:8}
 .scrim.on{opacity:1;pointer-events:auto}
 aside{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--paper);z-index:9;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;padding:1.5rem}
@@ -73,29 +129,49 @@ aside header{position:static;padding:0 0 1rem;background:none;backdrop-filter:no
 .line{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
 .qty button{width:26px;height:26px;border:1px solid var(--line);background:none;border-radius:50%}
 input,textarea{width:100%;font:inherit;padding:.6rem;border:1px solid var(--line);border-radius:3px;margin-top:.4rem;background:var(--mist)}
-label{display:block;font-size:.88rem;margin-top:.7rem}.chk{display:flex;gap:.5rem;align-items:center}.chk input{width:auto;margin:0}
+label{display:block;font-size:.88rem;margin-top:.7rem}
+.chk{display:flex;gap:.5rem;align-items:center}
+.chk input{width:auto;margin:0}
 .total{display:flex;justify-content:space-between;font-weight:600;font-size:1.1rem;margin:1rem 0 .6rem}
-.pay{border:1px solid var(--line);border-radius:3px;margin:.9rem 0 0;padding:.2rem .8rem .6rem}.pay legend{font-size:.88rem;padding:0 .3rem}
+.pay{border:1px solid var(--line);border-radius:3px;margin:.9rem 0 0;padding:.2rem .8rem .6rem}
+.pay legend{font-size:.88rem;padding:0 .3rem}
 .err{color:#a3283f;font-size:.9rem;min-height:1.2rem}
-.done{text-align:center;padding:2rem 0}.done h3{font:500 2rem var(--serif)}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:3rem}.story{grid-template-columns:1fr}nav a.lnk{display:none}}
+.done{text-align:center;padding:2rem 0}
+.done h3{font:500 2rem var(--serif)}
+
+@media(max-width:700px){.modal .box{grid-template-columns:1fr}}
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding-top:3rem}
+  .story{grid-template-columns:1fr}
+  nav a.lnk{display:none}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
+
 <body>
 <header>
   <a class="logo" href="#">Thistle &amp; Thread</a>
-  <nav><a class="lnk" href="#shop">Shop</a><a class="lnk" href="#story">Our craft</a>
-  <button class="ghost" id="wl">♥ Saved (<span id="lc">0</span>)</button><button class="ghost" id="tk">Track order</button><button class="bag" id="open">Basket (<span id="count">0</span>)</button></nav>
+  <nav>
+    <a class="lnk" href="#shop">Shop</a>
+    <a class="lnk" href="#story">Our craft</a>
+    <button class="ghost" id="wl">♥ Saved (<span id="lc">0</span>)</button>
+    <button class="ghost" id="tk">Track order</button>
+    <button class="bag" id="open">Basket (<span id="count">0</span>)</button>
+  </nav>
 </header>
 
 <div class="hero">
   <div>
     <h1>Gifts made slowly, by hand, for people who matter.</h1>
     <p>Candles poured in small batches, ceramics thrown on the wheel and jewellery shaped at the bench. Every order is wrapped and signed by us.</p>
-    <a class="btn" href="#shop">Shop gifts</a><a class="btn alt" href="#story">How we make them</a>
+    <a class="btn" href="#shop">Shop gifts</a>
+    <a class="btn alt" href="#story">How we make them</a>
   </div>
-  <div class="note"><q>For the one who always makes the tea. Thank you for everything.</q><small>A note we'll write for you, free with every order.</small></div>
+  <div class="note">
+    <q>For the one who always makes the tea. Thank you for everything.</q>
+    <small>A note we'll write for you, free with every order.</small>
+  </div>
 </div>
 
 <section id="shop">
@@ -112,184 +188,532 @@ label{display:block;font-size:.88rem;margin-top:.7rem}.chk{display:flex;gap:.5re
     <div><h3>Shipped in 3 days</h3><p>Orders pack within three working days. You can track the status with us by phone.</p></div>
   </div>
 </section>
+
 <footer>© Thistle &amp; Thread. Made by hand in India.</footer>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Product details"></div>
 <div class="toast" id="toast" role="status"><span id="tmsg"></span><button id="tview">View basket</button></div>
-<div class="modal" id="trk" role="dialog" aria-modal="true" aria-label="Track your order"><div class="box" style="grid-template-columns:1fr;max-width:480px"><div class="txt">
-  <button class="x" id="tx" aria-label="Close">×</button><h3>Track your order</h3>
-  <form id="tf"><label>Order number<input name="id" inputmode="numeric" required></label>
-  <label>Phone used at checkout<input name="phone" autocomplete="tel" required></label>
-  <button class="btn" style="margin-top:1rem">Track order</button></form>
-  <div class="err" id="terr" role="alert"></div><div id="tres"></div></div></div></div>
+
+<div class="modal" id="trk" role="dialog" aria-modal="true" aria-label="Track your order">
+  <div class="box" style="grid-template-columns:1fr;max-width:480px">
+    <div class="txt">
+      <button class="x" id="tx" aria-label="Close">×</button>
+      <h3>Track your order</h3>
+      <form id="tf">
+        <label>Order number<input name="id" inputmode="numeric" required></label>
+        <label>Phone used at checkout<input name="phone" autocomplete="tel" required></label>
+        <button class="btn" style="margin-top:1rem">Track order</button>
+      </form>
+      <div class="err" id="terr" role="alert"></div>
+      <div id="tres"></div>
+    </div>
+  </div>
+</div>
+
 <div class="scrim" id="scrim"></div>
+
 <aside id="drawer" aria-label="Basket" aria-hidden="true">
-  <header><strong style="font:600 1.6rem var(--serif)">Your basket</strong><button class="add" id="close">Close</button></header>
+  <header>
+    <strong style="font:600 1.6rem var(--serif)">Your basket</strong>
+    <button class="add" id="close">Close</button>
+  </header>
   <div id="items"></div>
+
   <form id="form" novalidate>
     <label>Name<input name="name" autocomplete="name"></label>
     <label>Phone<input name="phone" autocomplete="tel"></label>
     <label>Delivery address<textarea name="address" rows="2" autocomplete="street-address"></textarea></label>
     <label class="chk"><input type="checkbox" name="gift_wrap" id="wrap"> Gift wrap (+₹{{ gift_wrap }})</label>
     <label>Note for the card<textarea name="note" rows="2" maxlength="300"></textarea></label>
-    {% if online %}<fieldset class="pay"><legend>Payment</legend>
+
+    {% if online %}
+    <fieldset class="pay">
+      <legend>Payment</legend>
       <label class="chk"><input type="radio" name="pay" value="online" checked> Pay online (UPI, cards, netbanking)</label>
-      <label class="chk"><input type="radio" name="pay" value="cod"> Cash on delivery</label></fieldset>{% endif %}
+      <label class="chk"><input type="radio" name="pay" value="cod"> Cash on delivery</label>
+    </fieldset>
+    {% endif %}
+
     <div class="total"><span>Total</span><span id="total">₹0</span></div>
     <div class="err" id="err" role="alert"></div>
     <button class="btn" style="width:100%" id="submit">Place order</button>
   </form>
 </aside>
 
-{% if online %}<script src="https://checkout.razorpay.com/v1/checkout.js"></script>{% endif %}
+{% if online %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+{% endif %}
+
 <script>
 const WRAP = {{ gift_wrap }}, ONLINE = {{ 'true' if online else 'false' }};
 const $ = s => document.querySelector(s);
+
 let products = [], cat = "All", cart = load(), likes = new Set(loadL());
-function loadL(){ try { return JSON.parse(localStorage.getItem("likes")) || []; } catch { return []; } }
-function saveL(){ try { localStorage.setItem("likes", JSON.stringify([...likes])); } catch {} $("#lc").textContent = likes.size; }
-function load(){ try { return JSON.parse(localStorage.getItem("cart")) || {}; } catch { return {}; } }
-function save(){ try { localStorage.setItem("cart", JSON.stringify(cart)); } catch {} }
+
+function loadL(){
+  try { return JSON.parse(localStorage.getItem("likes")) || []; }
+  catch { return []; }
+}
+function saveL(){
+  try { localStorage.setItem("likes", JSON.stringify([...likes])); } catch {}
+  $("#lc").textContent = likes.size;
+}
+function load(){
+  try { return JSON.parse(localStorage.getItem("cart")) || {}; }
+  catch { return {}; }
+}
+function save(){
+  try { localStorage.setItem("cart", JSON.stringify(cart)); } catch {}
+}
+
 const inr = n => "₹" + n.toLocaleString("en-IN");
-const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({
+  "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;"
+}[c]));
 
 async function init(){
-  products = await (await fetch("/api/products")).json();
-  const cats = ["All", ...new Set(products.map(p => p.category)), "♥ Saved"]; saveL();
-  $("#chips").innerHTML = cats.map(c => `<button class="chip" aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join("");
-  $("#chips").onclick = e => { if(e.target.dataset.c){ cat = e.target.dataset.c; init2(); } };
-  init2(); render();
+  try {
+    const response = await fetch("/api/products");
+    if (!response.ok) throw new Error("Products could not be loaded");
+
+    products = await response.json();
+
+    const cats = ["All", ...new Set(products.map(p => p.category)), "♥ Saved"];
+    saveL();
+
+    $("#chips").innerHTML = cats.map(c =>
+      `<button class="chip" aria-pressed="${c===cat}" data-c="${esc(c)}">${esc(c)}</button>`
+    ).join("");
+
+    $("#chips").onclick = e => {
+      if(e.target.dataset.c){
+        cat = e.target.dataset.c;
+        init2();
+      }
+    };
+
+    init2();
+    render();
+  } catch(error) {
+    console.error("Product loading error:", error);
+    $("#grid").innerHTML = "<p>Products could not be loaded. Please refresh the page.</p>";
+  }
 }
+
 function init2(){
-  document.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === cat));
-  $("#grid").innerHTML = (cat==="♥ Saved" ? products.filter(p => likes.has(p.id)) : products.filter(p => cat==="All" || p.category===cat)).map(p => `
-    <article class="tag"><div class="ph"><img class="pic" src="/static/images/${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" data-v="${p.id}"><button class="heart ${likes.has(p.id)?"on":""}" data-h="${p.id}" aria-pressed="${likes.has(p.id)}" aria-label="Save ${esc(p.name)} to wishlist">♥</button></div>
-    <h3 data-v="${p.id}">${esc(p.name)}</h3><p>${esc(p.blurb)}</p>
-    <div class="row"><span class="price">${inr(p.price)}</span><button class="add" data-id="${p.id}">Add to basket</button></div></article>`).join("");
+  document.querySelectorAll(".chip").forEach(b =>
+    b.setAttribute("aria-pressed", b.dataset.c === cat)
+  );
+
+  const shown = cat === "♥ Saved"
+    ? products.filter(p => likes.has(p.id))
+    : products.filter(p => cat === "All" || p.category === cat);
+
+  $("#grid").innerHTML = shown.map(p => `
+    <article class="tag">
+      <div class="ph">
+        <!-- FIXED: images are stored directly inside static/, not static/images/ -->
+        <img class="pic"
+             src="/static/${encodeURIComponent(p.image)}"
+             alt="${esc(p.name)}"
+             loading="lazy"
+             data-v="${p.id}"
+             onerror="this.onerror=null;this.alt='Image unavailable: ${esc(p.name)}';this.style.objectFit='contain';">
+        <button class="heart ${likes.has(p.id)?"on":""}"
+                data-h="${p.id}"
+                aria-pressed="${likes.has(p.id)}"
+                aria-label="Save ${esc(p.name)} to wishlist">♥</button>
+      </div>
+      <h3 data-v="${p.id}">${esc(p.name)}</h3>
+      <p>${esc(p.blurb)}</p>
+      <div class="row">
+        <span class="price">${inr(p.price)}</span>
+        <button class="add" data-id="${p.id}">Add to basket</button>
+      </div>
+    </article>
+  `).join("");
 }
-$("#grid").onclick = e => { const id = e.target.dataset.id; if(id){ cart[id] = (cart[id]||0)+1; save(); render(); toast("Added to your basket"); } };
+
+$("#grid").onclick = e => {
+  const id = e.target.dataset.id;
+  if(id){
+    cart[id] = (cart[id] || 0) + 1;
+    save();
+    render();
+    toast("Added to your basket");
+  }
+};
 
 function render(){
   const ids = Object.keys(cart).filter(id => products.some(p => p.id == id));
   let sub = 0, n = 0;
+
   $("#items").innerHTML = ids.length ? ids.map(id => {
-    const p = products.find(p => p.id == id), q = cart[id]; sub += p.price*q; n += q;
-    return `<div class="line"><div><strong>${esc(p.name)}</strong><br>${inr(p.price)}</div>
-    <div class="qty"><button data-d="-1" data-id="${id}" aria-label="Remove one">−</button> ${q} <button data-d="1" data-id="${id}" aria-label="Add one">+</button></div></div>`;
+    const p = products.find(p => p.id == id), q = cart[id];
+    sub += p.price * q;
+    n += q;
+
+    return `<div class="line">
+      <div><strong>${esc(p.name)}</strong><br>${inr(p.price)}</div>
+      <div class="qty">
+        <button data-d="-1" data-id="${id}" aria-label="Remove one">−</button>
+        ${q}
+        <button data-d="1" data-id="${id}" aria-label="Add one">+</button>
+      </div>
+    </div>`;
   }).join("") : "<p>Your basket is empty. Pick a gift from the shelf.</p>";
+
   if($("#wrap").checked && ids.length) sub += WRAP;
-  $("#count").textContent = n; $("#total").textContent = inr(sub);
+
+  $("#count").textContent = n;
+  $("#total").textContent = inr(sub);
   $("#form").style.display = ids.length ? "" : "none";
   $("#submit").textContent = payOnline() ? "Pay " + inr(sub) : "Place order";
 }
-function payOnline(){ const r = document.querySelector('input[name=pay]:checked'); return ONLINE && (!r || r.value === "online"); }
-$("#form").onchange = e => { if(e.target.name === "pay") render(); };
+
+function payOnline(){
+  const r = document.querySelector('input[name=pay]:checked');
+  return ONLINE && (!r || r.value === "online");
+}
+
+$("#form").onchange = e => {
+  if(e.target.name === "pay") render();
+};
+
 function view(id){
-  const p = products.find(p => p.id == id); if(!p) return;
-  const rows = p.details.split("\n").map(l => { const i = l.indexOf(":");
-    return `<dt>${esc(l.slice(0,i))}:</dt><dd>${esc(l.slice(i+1).trim())}</dd>`; }).join("");
-  $("#modal").innerHTML = `<div class="box"><img src="/static/images/${esc(p.image)}" alt="${esc(p.name)}">
-    <div class="txt"><button class="x" id="mx" aria-label="Close">×</button><h3>${esc(p.name)}</h3>
-    <div class="price">${inr(p.price)}</div><p>${esc(p.description)}</p><dl>${rows}</dl>
-    <button class="btn" data-id="${p.id}" id="madd">Add to basket</button></div></div>`;
+  const p = products.find(p => p.id == id);
+  if(!p) return;
+
+  const rows = p.details.split("\n").map(l => {
+    const i = l.indexOf(":");
+    if(i < 0) return `<dd>${esc(l)}</dd>`;
+    return `<dt>${esc(l.slice(0,i))}:</dt><dd>${esc(l.slice(i+1).trim())}</dd>`;
+  }).join("");
+
+  $("#modal").innerHTML = `
+    <div class="box">
+      <!-- FIXED: use /static/ because files are in the static root folder -->
+      <img src="/static/${encodeURIComponent(p.image)}"
+           alt="${esc(p.name)}"
+           onerror="this.onerror=null;this.alt='Product image unavailable';">
+      <div class="txt">
+        <button class="x" id="mx" aria-label="Close">×</button>
+        <h3>${esc(p.name)}</h3>
+        <div class="price">${inr(p.price)}</div>
+        <p>${esc(p.description)}</p>
+        <dl>${rows}</dl>
+        <button class="btn" data-id="${p.id}" id="madd">Add to basket</button>
+      </div>
+    </div>`;
+
   $("#modal").classList.add("on");
 }
-$("#grid").addEventListener("click", e => { const h = e.target.dataset.h;
-  if(h){ const id = +h; likes.has(id) ? likes.delete(id) : likes.add(id); saveL(); init2();
-    toast(likes.has(id) ? "Saved to your wishlist" : "Removed from wishlist"); } });
-$("#wl").onclick = () => { cat = "♥ Saved"; init2(); location.hash = "shop"; };
-$("#grid").addEventListener("click", e => { if(e.target.dataset.v) view(e.target.dataset.v); });
+
+$("#grid").addEventListener("click", e => {
+  const h = e.target.dataset.h;
+  if(h){
+    const id = +h;
+    likes.has(id) ? likes.delete(id) : likes.add(id);
+    saveL();
+    init2();
+    toast(likes.has(id) ? "Saved to your wishlist" : "Removed from wishlist");
+  }
+});
+
+$("#wl").onclick = () => {
+  cat = "♥ Saved";
+  init2();
+  location.hash = "shop";
+};
+
+$("#grid").addEventListener("click", e => {
+  if(e.target.dataset.v) view(e.target.dataset.v);
+});
+
 $("#modal").onclick = e => {
-  if(e.target.id === "modal" || e.target.id === "mx") $("#modal").classList.remove("on");
-  if(e.target.id === "madd"){ const id = e.target.dataset.id; cart[id] = (cart[id]||0)+1; save(); render();
-    $("#modal").classList.remove("on"); toast("Added to your basket"); } };
-$("#items").onclick = e => { const id = e.target.dataset.id; if(!id) return;
-  cart[id] += +e.target.dataset.d; if(cart[id] < 1) delete cart[id]; save(); render(); };
+  if(e.target.id === "modal" || e.target.id === "mx")
+    $("#modal").classList.remove("on");
+
+  if(e.target.id === "madd"){
+    const id = e.target.dataset.id;
+    cart[id] = (cart[id] || 0) + 1;
+    save();
+    render();
+    $("#modal").classList.remove("on");
+    toast("Added to your basket");
+  }
+};
+
+$("#items").onclick = e => {
+  const id = e.target.dataset.id;
+  if(!id || !e.target.dataset.d) return;
+
+  cart[id] += +e.target.dataset.d;
+  if(cart[id] < 1) delete cart[id];
+  save();
+  render();
+};
+
 $("#wrap").onchange = render;
 
-function toggle(on){ $("#drawer").classList.toggle("on", on); $("#scrim").classList.toggle("on", on);
-  $("#drawer").setAttribute("aria-hidden", !on); }
-$("#open").onclick = () => toggle(true); $("#close").onclick = $("#scrim").onclick = () => toggle(false);
-document.onkeydown = e => { if(e.key === "Escape"){ toggle(false); $("#trk").classList.remove("on"); $("#modal").classList.remove("on"); } };
+function toggle(on){
+  $("#drawer").classList.toggle("on", on);
+  $("#scrim").classList.toggle("on", on);
+  $("#drawer").setAttribute("aria-hidden", !on);
+}
+
+$("#open").onclick = () => toggle(true);
+$("#close").onclick = $("#scrim").onclick = () => toggle(false);
+
+document.onkeydown = e => {
+  if(e.key === "Escape"){
+    toggle(false);
+    $("#trk").classList.remove("on");
+    $("#modal").classList.remove("on");
+  }
+};
 
 function thanks(id, total, phone, paid){
-  cart = {}; save(); $("#form").reset(); render();
-  $("#items").innerHTML = `<div class="done"><h3>Thank you</h3><p>Order #${id} is placed. Total ${inr(total)}. ${paid ? "Payment received." : "We'll call you to confirm delivery. Pay when it arrives."}</p><button class="btn" id="tnow">Track this order</button></div>`;
+  cart = {};
+  save();
+  $("#form").reset();
+  render();
+
+  $("#items").innerHTML = `<div class="done">
+    <h3>Thank you</h3>
+    <p>Order #${id} is placed. Total ${inr(total)}.
+    ${paid ? "Payment received." : "We'll call you to confirm delivery. Pay when it arrives."}</p>
+    <button class="btn" id="tnow">Track this order</button>
+  </div>`;
+
   try { localStorage.setItem("last", JSON.stringify({id, phone})); } catch {}
-  $("#tnow").onclick = () => { toggle(false); openTrack(id, phone); };
+
+  $("#tnow").onclick = () => {
+    toggle(false);
+    openTrack(id, phone);
+  };
   $("#form").style.display = "none";
 }
+
 function openPayment(o, phone, btn){
-  const err = $("#err"); let paid = false;
+  const err = $("#err");
+  let paid = false;
+
   const rz = new Razorpay({
-    key: o.payment.key, order_id: o.payment.razorpay_order_id, amount: o.payment.amount, currency: o.payment.currency,
-    name: "Thistle & Thread", description: "Order #" + o.order_id, prefill: { contact: phone },
-    theme: { color: "#2B1733" },
+    key: o.payment.key,
+    order_id: o.payment.razorpay_order_id,
+    amount: o.payment.amount,
+    currency: o.payment.currency,
+    name: "Thistle & Thread",
+    description: "Order #" + o.order_id,
+    prefill: {contact: phone},
+    theme: {color: "#2B1733"},
+
     handler: async resp => {
       paid = true;
       try {
-        const r = await fetch("/api/payment/verify", { method:"POST", headers:{"Content-Type":"application/json"},
-          body: JSON.stringify(resp) });
+        const r = await fetch("/api/payment/verify", {
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify(resp)
+        });
+
         const d = await r.json();
-        if(!r.ok){ err.textContent = d.error; return; }
+        if(!r.ok){
+          err.textContent = d.error;
+          return;
+        }
         thanks(o.order_id, o.total, phone, true);
-      } catch { err.textContent = "Payment went through but we couldn't confirm it. Don't pay again, track order #" + o.order_id + " in a minute."; }
+      } catch {
+        err.textContent = "Payment went through but we couldn't confirm it. Don't pay again, track order #" + o.order_id + " in a minute.";
+      }
     },
-    modal: { ondismiss: () => { if(paid) return; btn.disabled = false;
-      err.innerHTML = `Payment not completed. Order #${o.order_id} is saved. <button type="button" class="add" id="retry">Retry payment</button>`;
-      $("#retry").onclick = () => { err.textContent = ""; btn.disabled = true; openPayment(o, phone, btn); }; } }
+
+    modal: {
+      ondismiss: () => {
+        if(paid) return;
+        btn.disabled = false;
+        err.innerHTML = `Payment not completed. Order #${o.order_id} is saved.
+          <button type="button" class="add" id="retry">Retry payment</button>`;
+
+        $("#retry").onclick = () => {
+          err.textContent = "";
+          btn.disabled = true;
+          openPayment(o, phone, btn);
+        };
+      }
+    }
   });
-  rz.on("payment.failed", r => { err.textContent = (r.error && r.error.description) || "Payment failed. Please try again."; });
+
+  rz.on("payment.failed", r => {
+    err.textContent = (r.error && r.error.description) || "Payment failed. Please try again.";
+  });
+
   rz.open();
 }
-$("#form").onsubmit = async e => {
-  e.preventDefault(); $("#err").textContent = "";
-  const f = new FormData(e.target), btn = $("#submit"); btn.disabled = true; const phone = f.get("phone");
-  const online = payOnline(); let handoff = false;
-  try {
-    const r = await fetch("/api/orders", { method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({ name:f.get("name"), phone:f.get("phone"), address:f.get("address"),
-        note:f.get("note"), gift_wrap:$("#wrap").checked, payment_method: online ? "online" : "cod",
-        items:Object.entries(cart).map(([id,qty]) => ({id:+id, qty})) }) });
-    const d = await r.json();
-    if(!r.ok){ $("#err").textContent = d.error; return; }
-    if(online){ handoff = true; openPayment(d, phone, btn); }  // basket is cleared only after payment is verified
-    else thanks(d.order_id, d.total, phone, false);
-  } catch { $("#err").textContent = "Could not reach the shop. Check your connection and try again."; }
-  finally { if(!handoff) btn.disabled = false; }
-};
-let tt; function toast(m){ $("#tmsg").textContent = m; $("#toast").classList.add("on"); clearTimeout(tt); tt = setTimeout(() => $("#toast").classList.remove("on"), 2600); }
-$("#tview").onclick = () => { $("#toast").classList.remove("on"); toggle(true); };
 
-const STEPS = [["New","Order placed"],["Packed","Packed with care"],["Shipped","On its way"],["Delivered","Delivered"]];
-function lastOrder(){ try { return JSON.parse(localStorage.getItem("last")) || {}; } catch { return {}; } }
-function openTrack(id, phone){ const f = $("#tf"), l = lastOrder();
-  f.id.value = id || l.id || ""; f.phone.value = phone || l.phone || "";
-  $("#tres").innerHTML = ""; $("#terr").textContent = ""; $("#trk").classList.add("on");
-  if(f.id.value && f.phone.value) f.requestSubmit(); }
+$("#form").onsubmit = async e => {
+  e.preventDefault();
+  $("#err").textContent = "";
+
+  const f = new FormData(e.target);
+  const btn = $("#submit");
+  btn.disabled = true;
+
+  const phone = f.get("phone");
+  const online = payOnline();
+  let handoff = false;
+
+  try {
+    const r = await fetch("/api/orders", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        name:f.get("name"),
+        phone:f.get("phone"),
+        address:f.get("address"),
+        note:f.get("note"),
+        gift_wrap:$("#wrap").checked,
+        payment_method:online ? "online" : "cod",
+        items:Object.entries(cart).map(([id,qty]) => ({id:+id, qty}))
+      })
+    });
+
+    const d = await r.json();
+
+    if(!r.ok){
+      $("#err").textContent = d.error;
+      return;
+    }
+
+    if(online){
+      handoff = true;
+      openPayment(d, phone, btn);
+    } else {
+      thanks(d.order_id, d.total, phone, false);
+    }
+  } catch {
+    $("#err").textContent = "Could not reach the shop. Check your connection and try again.";
+  } finally {
+    if(!handoff) btn.disabled = false;
+  }
+};
+
+let tt;
+function toast(m){
+  $("#tmsg").textContent = m;
+  $("#toast").classList.add("on");
+  clearTimeout(tt);
+  tt = setTimeout(() => $("#toast").classList.remove("on"), 2600);
+}
+
+$("#tview").onclick = () => {
+  $("#toast").classList.remove("on");
+  toggle(true);
+};
+
+const STEPS = [
+  ["New","Order placed"],
+  ["Packed","Packed with care"],
+  ["Shipped","On its way"],
+  ["Delivered","Delivered"]
+];
+
+function lastOrder(){
+  try { return JSON.parse(localStorage.getItem("last")) || {}; }
+  catch { return {}; }
+}
+
+function openTrack(id, phone){
+  const f = $("#tf"), l = lastOrder();
+  f.elements.id.value = id || l.id || "";
+  f.elements.phone.value = phone || l.phone || "";
+  $("#tres").innerHTML = "";
+  $("#terr").textContent = "";
+  $("#trk").classList.add("on");
+
+  if(f.elements.id.value && f.elements.phone.value)
+    f.requestSubmit();
+}
+
 $("#tk").onclick = () => openTrack();
-$("#trk").onclick = e => { if(e.target.id === "trk" || e.target.id === "tx") $("#trk").classList.remove("on"); };
-$("#tf").onsubmit = async e => { e.preventDefault(); $("#terr").textContent = ""; $("#tres").innerHTML = "";
+
+$("#trk").onclick = e => {
+  if(e.target.id === "trk" || e.target.id === "tx")
+    $("#trk").classList.remove("on");
+};
+
+$("#tf").onsubmit = async e => {
+  e.preventDefault();
+  $("#terr").textContent = "";
+  $("#tres").innerHTML = "";
+
   const f = e.target;
+
   try {
-    const r = await fetch(`/api/track?id=${encodeURIComponent(f.id.value)}&phone=${encodeURIComponent(f.phone.value)}`);
-    const d = await r.json(); if(!r.ok){ $("#terr").textContent = d.error; return; }
-    const wait = d.status === "Pending payment", at = wait ? -1 : STEPS.findIndex(s => s[0] === d.status), off = d.status === "Cancelled";
-    $("#tres").innerHTML = `<p><strong>Order #${d.id}</strong> · ${inr(d.total)}<br><small>${esc(d.created)} UTC</small></p>
-      ${off ? `<p class="cx">This order was cancelled.${d.payment_status === "Refund due" ? " Your payment will be refunded to the original method in 5-7 working days." : ""}</p>` : wait ? '<p class="cx">Waiting for payment. This order will not be packed until payment is received.</p>' : `<ol class="steps">${STEPS.map((s,i) => `<li class="${i<=at?"done":""} ${i===at?"now":""}">${s[1]}</li>`).join("")}</ol>`}
+    const r = await fetch(
+      `/api/track?id=${encodeURIComponent(f.elements.id.value)}&phone=${encodeURIComponent(f.elements.phone.value)}`
+    );
+
+    const d = await r.json();
+    if(!r.ok){
+      $("#terr").textContent = d.error;
+      return;
+    }
+
+    const wait = d.status === "Pending payment";
+    const at = wait ? -1 : STEPS.findIndex(s => s[0] === d.status);
+    const off = d.status === "Cancelled";
+
+    $("#tres").innerHTML = `
+      <p><strong>Order #${d.id}</strong> · ${inr(d.total)}<br>
+      <small>${esc(d.created)} UTC</small></p>
+      ${off
+        ? `<p class="cx">This order was cancelled.${d.payment_status === "Refund due" ? " Your payment will be refunded to the original method in 5-7 working days." : ""}</p>`
+        : wait
+          ? '<p class="cx">Waiting for payment. This order will not be packed until payment is received.</p>'
+          : `<ol class="steps">${STEPS.map((s,i) => `<li class="${i<=at?"done":""} ${i===at?"now":""}">${s[1]}</li>`).join("")}</ol>`
+      }
       <p>${d.items.map(i => `${i.qty} × ${esc(i.name)}`).join("<br>")}${d.gift_wrap ? "<br><em>Gift wrapped</em>" : ""}</p>
-      ${wait || at === 0 || at === 1 ? '<button class="btn alt" style="margin:0" id="tcancel">Cancel order</button>' : ""}`;
-  } catch { $("#terr").textContent = "Could not reach the shop. Try again."; } };
+      ${wait || at === 0 || at === 1 ? '<button class="btn alt" style="margin:0" id="tcancel">Cancel order</button>' : ""}
+    `;
+  } catch {
+    $("#terr").textContent = "Could not reach the shop. Try again.";
+  }
+};
+
 $("#tres").onclick = async e => {
-  if(e.target.id !== "tcancel" || !confirm("Cancel this order? This can't be undone.")) return;
+  if(e.target.id !== "tcancel" || !confirm("Cancel this order? This can't be undone."))
+    return;
+
   const f = $("#tf");
+
   try {
-    const r = await fetch("/api/cancel", { method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({ id:f.id.value, phone:f.phone.value }) });
-    const d = await r.json(); if(!r.ok){ $("#terr").textContent = d.error; return; }
-    toast(d.refund ? "Order cancelled. Refund on its way" : "Order cancelled"); f.requestSubmit();
-  } catch { $("#terr").textContent = "Could not reach the shop. Try again."; } };
+    const r = await fetch("/api/cancel", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        id:f.elements.id.value,
+        phone:f.elements.phone.value
+      })
+    });
+
+    const d = await r.json();
+
+    if(!r.ok){
+      $("#terr").textContent = d.error;
+      return;
+    }
+
+    toast(d.refund ? "Order cancelled. Refund on its way" : "Order cancelled");
+    f.requestSubmit();
+  } catch {
+    $("#terr").textContent = "Could not reach the shop. Try again.";
+  }
+};
+
 init();
 </script>
 </body>
 </html>
+```
