@@ -1,10 +1,8 @@
-candle.webp
-lavender.webp
-cups.webp
-dish.webp
-earrings.webp
-anklet.jpg
-journal.webp
-bookmark.webp
-hamper_small.jpg
-hamper_big.jpg
+# (name, category, price INR, short blurb, image file, full description, details)
+PRODUCTS = [
+    ("Beeswax Pillar Candle", "Candles", 549,
+     "Hand-poured, cotton wick, burns 40 hours.",
+     "candle.webp",
+     # Keep the complete description and details here
+    ),
+]
